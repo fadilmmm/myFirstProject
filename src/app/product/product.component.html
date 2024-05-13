@@ -1,0 +1,18 @@
+<p>product works!</p>
+<!--
+    injection du service pour travailler avec son data dans product.ts on utilise constructor
+-->
+
+
+<table class="table">
+    <tr>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Quantity</th>
+    </tr>
+    <tr *ngFor= "let item of data">
+        <td>{{item.productName}}</td>
+        <td>{{item.productPrice}}</td>
+        <td>{{item.productQuantity}}</td>
+    </tr>
+</table>

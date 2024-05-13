@@ -1,0 +1,27 @@
+<!--du ts au html-->
+<p><b>welcome to</b> {{name}} you have {{age}}years old </p>
+<p>statut: <b>{{getstatus()}}</b></p>
+
+<!--du html au ts  -->
+<button type="button" class="btn-btn-danger" (click)="getMessage()">Save</button>
+ 
+<div class="row">
+<div class="col-md-4 offset-md-4">  
+    <div class="card">
+        <div class="card-header">
+            <h4 class="text-center">Two way binding</h4>
+        </div>
+        <div class="card-body">
+            <input type="text" class="form-control">
+            
+        </div>   
+    </div>  
+</div>
+</div>
+
+<div class="row d-flex justify-content-center">
+    <button type="button" class="btn-btn-link" (click)="goToHome()">Go to Home</button>
+ </div>
+
+
+

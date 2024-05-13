@@ -1,0 +1,60 @@
+<div class="container">
+    <h3><u>Contact</u></h3>
+    <form autocomplete="off" #form="ngForm" (submit)= "onSubmit(form)">
+        <div class="form-group">
+            <label>E-mail</label>
+            <input type="email" id="email" class="form-control"
+            ngModel name="email"
+            #email="ngModel"
+            [(ngModel)]="login.email"
+            required
+            minlength="5"
+            maxlength="25"
+            >
+            <div class="alert alert-danger" *ngIf="email.touched && !email.valid">
+                <div *ngIf= "email.errors && email.errors.hasOwnProperty('required')">required</div>
+                <div *ngIf= "email.errors && email.errors.hasOwnProperty('minlength')">minimum 5 caractères</div>
+                <div *ngIf= "email.errors && email.errors.hasOwnProperty('maxlength')">maximum 20 caractères</div>
+                <!--
+                <div *ngIf= "email.errors && email.errors.hasOwnProperty('pattern')">pattern</div>
+                -->
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" 
+            class="form-control"
+            ngModel name="password"
+            [(ngModel)]="login.password"
+            #password ="ngModel"
+            required
+            minlength="8"
+            maxlength="20">
+            <div class="alert alert-danger" *ngIf="password.touched && !email.valid">
+                <div *ngIf= "password.errors && password.errors.hasOwnProperty('required')">Password required</div>
+                <div *ngIf= "password.errors && password.errors.hasOwnProperty('minlength')">minimum 5 caractères</div>
+                <div *ngIf= "password.errors && password.errors.hasOwnProperty('maxlength')">maximum 20 caractères</div>
+            
+            </div>
+            
+        </div>
+        <div class="form-group">
+            <label>Confim password</label>
+            <input type="password" name="confirmPassword" 
+            id="confirmPassword" 
+            class="form-control"
+            #confirmPassword="ngModel"
+            [(ngModel)]= "cofirmPass"
+            pattern="{{login.password}}"
+            required>
+            <div class="alert alert-danger" *ngIf="confirmPassword.touched && !email.valid">
+                <div *ngIf= "confirmPassword.errors && confirmPassword.errors.hasOwnProperty('required')"> Confirm Password required</div>
+                <div *ngIf= "confirmPassword.errors && confirmPassword.errors.hasOwnProperty('minlength')">minimum 5 caractères</div>
+                <div *ngIf= "confirmPassword.errors && confirmPassword.errors.hasOwnProperty('maxlength')">maximum 20 caractères</div>
+            
+            </div>
+            
+        </div>
+        <button style="background-color: red;" type="submit">Send</button>
+    </form>
+</div>

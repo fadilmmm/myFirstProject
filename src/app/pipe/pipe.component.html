@@ -1,0 +1,29 @@
+
+<div class="container">
+
+{{firstName | lowercase }} <br>
+{{firstName | uppercase }} <br>
+{{title | titlecase }} <br>
+{{title | slice: 1:6}} <br>
+
+{{student | json}} <br>
+
+{{myDate | date}} <br>
+{{myDate | date : 'short'}} <br>
+{{myDate | date : 'shortTime'}} <br>
+{{myDate | date : 'shortDate'}} <br>
+{{myDate | date : 'longTime'}} <br>
+
+
+{{2.316 | number: '1.2-3'}} <br>
+{{2.316 | number: '3.1-2'}} <br>
+
+
+{{0.25 | percent }} <br>
+
+{{0.50 | currency : "EUR" }} <br>
+{{0.80 | currency : "EUR" : "code" }} <br>
+
+
+</div>
+

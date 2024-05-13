@@ -1,0 +1,8 @@
+<p>welcome to parent</p>
+
+<!-- du parent au child
+<app-child [nameFromParent]="name"></app-child>
+-->
+<!-- on stocke le child event dans le msg-->
+<app-child (childEvent)= "message=$event"></app-child>
+{{message}}

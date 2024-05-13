@@ -1,0 +1,52 @@
+
+<div class="container-fluid">
+
+
+<h2>PAGE 2</h2>
+
+<p>welcome to home</p>
+ <div class="row">
+    <button type="button" class="btn-btn-link" (click)="goToUser()">Go to user</button>
+ </div>
+
+ <!-- ngIf  -->
+
+<div class="row" *ngIf="active" style="background-color: red;">
+   <div class="col-md-3" style="border: 1px solid;">
+   <h3>welcome {{firstname}}</h3>
+   </div>
+</div>
+
+
+<!-- ngFor  -->
+<div class="row">
+   <table class="table">
+      <tr>
+         <th><i class="fa fa-user" aria-hidden="true"></i>name</th>
+         <th>code</th>
+         <th>country</th>
+      </tr>
+
+      <tr *ngFor="let item of dataList">
+         <td><strong>{{item.name}}</strong></td>
+         <td>{{item.code}}</td>
+         <td>{{item.country}}</td>
+         <td><i class="fa fa-forward" aria-hidden="true"></i>
+         </td>
+      </tr>
+   </table>
+</div>
+
+<!-- ngSwitch -->
+
+<div class="row">
+   <div [ngSwitch] ="name">
+      <div *ngSwitchCase= "'Khalil'">welcome khalil</div>
+      <div *ngSwitchCase= "'Moussa'">welcome Moussa</div>
+      <div *ngSwitchCase= "'wassim'">welcome wassim</div>
+
+   </div>
+</div>
+</div>
+
+
